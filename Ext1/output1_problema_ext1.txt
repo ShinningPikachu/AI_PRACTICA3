@@ -1,0 +1,85 @@
+
+ff: parsing domain file
+domain 'ROVERS' defined
+ ... done.
+ff: parsing problem file
+problem 'ROVERS-BASIC' defined
+ ... done.
+
+
+no metric specified. plan length assumed.
+
+task contains conditional effects. turning off state domination.
+
+
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is EHC, if that fails then  best-first on 1*g(s) + 5*h(s) where
+    metric is  plan length
+
+Cueing down from goal distance:   15 into depth [1]
+                                  14            [1][2][3]
+                                  13            [1]
+                                  12            [1]
+                                  11            [1][2][3][4][5]
+                                  10            [1]
+                                   9            [1][2]
+                                   8            [1][2][3][4]
+                                   7            [1]
+                                   6            [1][2][3][4][5]
+                                   5            [1]
+                                   4            [1]
+                                   3            [1][2][3][4][5][6]
+                                   2            [1][2][3][4]
+                                   1            [1]
+                                   0
+
+ff: found legal plan as follows
+
+step    0: MOVER R2 AS1 AS3
+        1: CARGARPERSONAL R2 AS3
+        2: REVISAESTADOASENTAMIENTO AS3
+        3: DESCARGARROVER R2 AS3 P4
+        4: MOVER R2 AS3 AL2
+        5: REVISAESTADOROVER R2
+        6: MOVER R1 AS1 AL1
+        7: CARGARSUMINISTRO R1 AL1
+        8: MOVER R1 AL1 AS3
+        9: REVISAESTADOALMACEN AL1
+       10: DESCARGARROVER R1 AS3 P2
+       11: REVISAESTADOROVER R1
+       12: MOVER R2 AL2 AS1
+       13: MOVER R1 AS3 AL3
+       14: CARGARSUMINISTRO R1 AL3
+       15: MOVER R1 AL3 AS2
+       16: REVISAESTADOALMACEN AL3
+       17: DESCARGARROVER R1 AS2 P8
+       18: REVISAESTADOROVER R1
+       19: MOVER R2 AS1 AL2
+       20: CARGARSUMINISTRO R2 AL2
+       21: MOVER R2 AL2 AS1
+       22: REVISAESTADOALMACEN AL2
+       23: DESCARGARROVER R2 AS1 P3
+       24: DESCARGARROVER R2 AS1 P6
+       25: REVISAESTADOROVER R2
+       26: CARGARPERSONAL R2 AS1
+       27: MOVER R2 AS1 AS3
+       28: DESCARGARROVER R2 AS3 P5
+       29: MOVER R2 AS3 AS1
+       30: DESCARGARROVER R2 AS1 P9
+       31: REVISAESTADOROVER R2
+       32: CARGARPERSONAL R2 AS1
+       33: MOVER R2 AS1 AS3
+       34: REVISAESTADOASENTAMIENTO AS1
+       35: DESCARGARROVER R2 AS3 P10
+       36: REVISAESTADOROVER R2
+
+
+time spent:    0.00 seconds instantiating 28 easy, 56 hard action templates
+               0.00 seconds reachability analysis, yielding 41 facts and 84 actions
+               0.00 seconds creating final representation with 40 relevant facts, 20 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.15 seconds searching, evaluating 473 states, to a max depth of 6
+               0.15 seconds total time

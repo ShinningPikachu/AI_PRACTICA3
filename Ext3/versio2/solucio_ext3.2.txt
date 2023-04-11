@@ -1,0 +1,56 @@
+ff: parsing domain file
+domain 'ROVERS' defined
+ ... done.
+ff: parsing problem file
+problem 'ROVERS-BASIC' defined
+ ... done.
+
+
+metric established (normalized to minimize): ((0.05*[RF1](PREFERENCIA3)0.15*[RF2](PREFERENCIA2)0.30*[RF3](PREFERENCIA1)0.50*[RF0](COMBUSTIBLETOTAL)) - () + 0.00)
+
+task contains conditional effects. turning off state domination.
+
+
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is  best-first on 1*g(s) + 5*h(s) where
+    metric is ((0.05*[RF1](PREFERENCIA3)0.15*[RF2](PREFERENCIA2)0.30*[RF3](PREFERENCIA1)0.50*[RF0](COMBUSTIBLETOTAL)) - () + 0.00)
+
+advancing to distance:    7
+                          6
+                          5
+                          4
+                          3
+                          2
+                          1
+                          0
+
+ff: found legal plan as follows
+
+step    0: MOVER R1 AS1 AL2
+        1: MOVER R2 AS1 AL1
+        2: CARGARPERSONAL R2 AL1
+        3: MOVER R2 AL1 AS1
+        4: DESCARGARROVER R2 AS1 P4
+        5: REVISAESTADOROVER R2
+        6: MOVER R2 AS1 AL2
+        7: CARGARSUMINISTRO R2 AL2
+        8: MOVER R2 AL2 AS1
+        9: DESCARGARROVER R2 AS1 P3
+       10: REVISAESTADOALMACEN AL1
+       11: CARGARPERSONAL R1 AL2
+       12: MOVER R1 AL2 AS1
+       13: DESCARGARROVER R1 AS1 P1
+       14: REVISAESTADOROVER R1
+       15: REVISAESTADOROVER R2
+       16: REVISAESTADOALMACEN AL2
+
+
+time spent:    0.00 seconds instantiating 14 easy, 28 hard action templates
+               0.00 seconds reachability analysis, yielding 24 facts and 42 actions
+               0.00 seconds creating final representation with 24 relevant facts, 26 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+              12.97 seconds searching, evaluating 27616 states, to a max depth of 0
+              12.97 seconds total time

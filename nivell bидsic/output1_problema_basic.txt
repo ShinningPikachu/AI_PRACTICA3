@@ -1,0 +1,67 @@
+
+ff: parsing domain file
+domain 'ROVERS' defined
+ ... done.
+ff: parsing problem file
+problem 'ROVERS-BASIC' defined
+ ... done.
+
+
+no metric specified. plan length assumed.
+
+task contains conditional effects. turning off state domination.
+
+
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is EHC, if that fails then  best-first on 1*g(s) + 5*h(s) where
+    metric is  plan length
+
+Cueing down from goal distance:   11 into depth [1]
+                                  10            [1][2][3]
+                                   9            [1]
+                                   8            [1]
+                                   7            [1][2][3][4]
+                                   6            [1]
+                                   5            [1]
+                                   4            [1][2][3][4]
+                                   3            [1]
+                                   2            [1][2][3][4][5]
+                                   1            [1]
+                                   0
+
+ff: found legal plan as follows
+
+step    0: MOVER R2 AS1 AS3
+        1: CARGARPERSONAL R2 AS3
+        2: REVISAESTADOASENTAMIENTO AS3
+        3: DESCARGARROVER R2 AS3 P4
+        4: MOVER R2 AS3 AL2
+        5: REVISAESTADOROVER R2
+        6: CARGARSUMINISTRO R2 AL2
+        7: MOVER R2 AL2 AS3
+        8: REVISAESTADOALMACEN AL2
+        9: DESCARGARROVER R2 AS3 P2
+       10: MOVER R2 AS3 AL3
+       11: REVISAESTADOROVER R2
+       12: CARGARPERSONAL R1 AS1
+       13: MOVER R1 AS1 AS3
+       14: REVISAESTADOASENTAMIENTO AS1
+       15: DESCARGARROVER R1 AS3 P5
+       16: REVISAESTADOROVER R1
+       17: CARGARSUMINISTRO R2 AL3
+       18: MOVER R2 AL3 AL2
+       19: MOVER R2 AL2 AS1
+       20: REVISAESTADOALMACEN AL3
+       21: DESCARGARROVER R2 AS1 P3
+       22: REVISAESTADOROVER R2
+
+
+time spent:    0.00 seconds instantiating 30 easy, 36 hard action templates
+               0.00 seconds reachability analysis, yielding 31 facts and 62 actions
+               0.00 seconds creating final representation with 29 relevant facts, 20 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               0.00 seconds searching, evaluating 120 states, to a max depth of 5
+               0.00 seconds total time

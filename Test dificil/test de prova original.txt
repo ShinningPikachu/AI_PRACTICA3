@@ -1,0 +1,76 @@
+(define (problem rovers-dificil)
+	(:domain rovers)
+	(:objects as1 as2 as3	as4 as5 as6 as7 as8 as9	- asentamiento
+		  al1 al2 al3 al4 al5 al6 al7 al8 al9	- almacen
+		  r1 r2 r3 r4 - rover
+		  p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13 p14 p15 p16 p17 p18 p19 p20 p21 p22 p23 p24 p25 p26 p27 p28 p29 p30 p31 p32 p33 p34 p35 p36 p37 p38 p39 p40 p41 p42 p43 p44 p45 - peticion
+	)
+
+	(:init  (esta r1 as1) (esta r2 as1) (esta r3 as9) (esta r4 as9)
+
+		(conectado as1 as4) (conectado as1 al5) (conectado as2 as9)
+		(conectado as3 al1) (conectado al4 al1) (conectado as9 al1)
+		(conectado as9 al3) (conectado as4 al1) (conectado al3 as4)
+		(conectado al6 al3) (conectado al3 al7) (conectado al7 al8)
+		(conectado al7 as5) (conectado al8 as8) (conectado as8 al5)
+		(conectado as5 al5) (conectado as5 as6) (conectado as6 as7)
+		(conectado as5 al2) (conectado al2 al9) (conectado as4 al2)
+		
+		(= (disponibleSuministro al1) 2) (= (disponibleSuministro al2) 1) (= (disponibleSuministro al3) 1)
+		(= (disponibleSuministro al4) 2) (= (disponibleSuministro al5) 0) (= (disponibleSuministro al6) 2)
+		(= (disponibleSuministro al7) 3) (= (disponibleSuministro al8) 4) (= (disponibleSuministro al9) 1)
+
+		(= (disponiblePersonal al1) 2)   (= (disponiblePersonal al2) 0)   (= (disponiblePersonal al3) 0) 
+		(= (disponiblePersonal al4) 1)   (= (disponiblePersonal al5) 5)   (= (disponiblePersonal al6) 2)
+		(= (disponiblePersonal al7) 0)   (= (disponiblePersonal al8) 2)   (= (disponiblePersonal al9) 3)
+
+		(= (numPersonal r1) 0) (= (numPersonal r2) 0) (= (numPersonal r3) 0) (= (numPersonal r4) 0)
+		(= (numSuministro r1) 0) (= (numSuministro r2) 0) (= (numPersonal r3) 0) (= (numPersonal r4) 0)
+
+		(vacio r1) (vacio r2) (vacio r3) (vacio r4)
+
+		(peticion-dePersonal p1) (peticion-dePersonal p2) (peticion-dePersonal p3) (peticion-dePersonal p4) (peticion-dePersonal p5) 
+		(peticion-dePersonal p6) (peticion-dePersonal p7) (peticion-dePersonal p8) (peticion-dePersonal p9) (peticion-dePersonal p10) 
+		(peticion-dePersonal p11) (peticion-dePersonal p12) (peticion-dePersonal p13) (peticion-dePersonal p14) (peticion-dePersonal p15) 
+		(peticion-dePersonal p16) (peticion-dePersonal p17) (peticion-dePersonal p18) (peticion-dePersonal p19) (peticion-dePersonal p20) 
+		(peticion-dePersonal p21) (peticion-dePersonal p22) (peticion-dePersonal p23) (peticion-dePersonal p24) 
+
+		(peticion-deSuministro p25) (peticion-deSuministro p26) (peticion-deSuministro p27) (peticion-deSuministro p28) (peticion-deSuministro p29) 
+		(peticion-deSuministro p30) (peticion-deSuministro p31) (peticion-deSuministro p32) (peticion-deSuministro p33) (peticion-deSuministro p34)
+		(peticion-deSuministro p35) (peticion-deSuministro p36) (peticion-deSuministro p37) (peticion-deSuministro p38) (peticion-deSuministro p39) 
+		(peticion-deSuministro p40) (peticion-deSuministro p41) (peticion-deSuministro p42) (peticion-deSuministro p43) (peticion-deSuministro p44) 
+		(peticion-deSuministro p45)
+
+		(no-hecho p1) (no-hecho p2) (no-hecho p3) (no-hecho p4) (no-hecho p5)
+		(no-hecho p6) (no-hecho p7) (no-hecho p8) (no-hecho p9) (no-hecho p10)
+		(no-hecho p11) (no-hecho p12) (no-hecho p13) (no-hecho p14) (no-hecho p15)
+		(no-hecho p16) (no-hecho p17) (no-hecho p18) (no-hecho p19) (no-hecho p20)
+		(no-hecho p21) (no-hecho p22) (no-hecho p23) (no-hecho p24) (no-hecho p25)
+		(no-hecho p26) (no-hecho p27) (no-hecho p28) (no-hecho p29) (no-hecho p30)
+		(no-hecho p31) (no-hecho p32) (no-hecho p33) (no-hecho p34) (no-hecho p35)
+		(no-hecho p36) (no-hecho p37) (no-hecho p38) (no-hecho p39) (no-hecho p40)
+		(no-hecho p41) (no-hecho p42) (no-hecho p43) (no-hecho p44) (no-hecho p45)
+
+		(not(disponible al5)) (disponible al1) (disponible al2) (disponible al3) (disponible al4) (disponible al6) (disponible al7) (disponible al8) (disponible al9)
+
+		(not(disponible as2)) (not(disponible as3)) (not(disponible as7)) (disponible as1) (disponible as4) (disponible as5) (disponible as6) (disponible as8) 				(disponible as9)
+		
+		(destinoPeticion p1 as1) (destinoPeticion p2 as2) (destinoPeticion p3 as3) (destinoPeticion p4 as4) (destinoPeticion p5 as5)	
+		(destinoPeticion p6 as6) (destinoPeticion p7 as7) (destinoPeticion p8 as8) (destinoPeticion p9 as9) (destinoPeticion p10 as2)	
+		(destinoPeticion p11 as2) (destinoPeticion p12 as3) (destinoPeticion p13 as4) (destinoPeticion p14 as5) (destinoPeticion p15 as6)	
+		(destinoPeticion p16 as7) (destinoPeticion p17 as8) (destinoPeticion p18 as9) (destinoPeticion p19 as1) (destinoPeticion p20 as2)	
+		(destinoPeticion p21 as3) (destinoPeticion p22 as4) (destinoPeticion p23 as5) (destinoPeticion p24 as6) (destinoPeticion p25 as7)	
+		(destinoPeticion p26 as8) (destinoPeticion p27 as9) (destinoPeticion p28 as1) (destinoPeticion p29 as2) (destinoPeticion p30 as3)	
+		(destinoPeticion p31 as4) (destinoPeticion p32 as5) (destinoPeticion p33 as6) (destinoPeticion p34 as7) (destinoPeticion p35 as8)	
+		(destinoPeticion p36 as9) (destinoPeticion p37 as1) (destinoPeticion p38 as2) (destinoPeticion p39 as3) (destinoPeticion p40 as4)	
+		(destinoPeticion p41 as5) (destinoPeticion p42 as6) (destinoPeticion p43 as7) (destinoPeticion p44 as8) (destinoPeticion p45 as9)	
+	
+	)
+
+	(:goal  (and
+			(forall (?a - almacen) (not (disponible ?a)) )
+			(forall (?r - rover) (vacio ?r))
+		)
+	)
+
+)

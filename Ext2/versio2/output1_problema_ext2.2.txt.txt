@@ -1,0 +1,64 @@
+ff: parsing domain file
+domain 'ROVERS' defined
+ ... done.
+ff: parsing problem file
+problem 'ROVERS-BASIC' defined
+ ... done.
+
+
+metric established (normalized to minimize): ((1.00*[RF0](COMBUSTIBLETOTAL)) - () + 0.00)
+
+task contains conditional effects. turning off state domination.
+
+
+
+checking for cyclic := effects --- OK.
+
+ff: search configuration is  best-first on 1*g(s) + 5*h(s) where
+    metric is ((1.00*[RF0](COMBUSTIBLETOTAL)) - () + 0.00)
+
+advancing to distance:   11
+                         10
+                          9
+                          8
+                          7
+                          6
+                          5
+                          4
+                          3
+                          2
+                          1
+                          0
+
+ff: found legal plan as follows
+
+step    0: MOVER R1 AS1 AS3
+        1: CARGARPERSONAL R1 AS3
+        2: REVISAESTADOASENTAMIENTO AS3
+        3: CARGARPERSONAL R2 AS1
+        4: REVISAESTADOASENTAMIENTO AS1
+        5: DESCARGARROVER R2 AS1 P5
+        6: REVISAESTADOROVER R2
+        7: DESCARGARROVER R1 AS3 P4
+        8: MOVER R2 AS1 AL1
+        9: MOVER R1 AS3 AL2
+       10: REVISAESTADOROVER R1
+       11: CARGARSUMINISTRO R2 AL1
+       12: MOVER R2 AL1 AS3
+       13: DESCARGARROVER R2 AS3 P2
+       14: REVISAESTADOROVER R2
+       15: CARGARSUMINISTRO R1 AL2
+       16: MOVER R1 AL2 AS1
+       17: REVISAESTADOALMACEN AL1
+       18: REVISAESTADOALMACEN AL2
+       19: DESCARGARROVER R1 AS1 P3
+       20: REVISAESTADOROVER R1
+
+
+time spent:    0.15 seconds instantiating 21 easy, 32 hard action templates
+               0.00 seconds reachability analysis, yielding 32 facts and 53 actions
+               0.00 seconds creating final representation with 31 relevant facts, 21 relevant fluents
+               0.00 seconds computing LNF
+               0.00 seconds building connectivity graph
+               5.78 seconds searching, evaluating 15361 states, to a max depth of 0
+               5.93 seconds total time
